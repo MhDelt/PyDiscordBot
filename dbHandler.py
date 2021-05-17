@@ -12,4 +12,4 @@ def get_all_events():
 
 
 def remove_event_by_id(id):
-    db.remove(doc_id=id)
+    db.remove(doc_ids=[id])

@@ -35,7 +35,7 @@ async def roll(ctx, *args):
             res = random.randint(1, int(args[0]))
             ans = 'Your fucking result is ' + str(res)
         elif args[0].lower() == 'rick':
-            ans = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+            ans = 'https://youtu.be/dQw4w9WgXcQ'
         else:
             ans = 'Number of faces is NUMBER, idiot'
     elif len(args) == 2:
@@ -92,8 +92,11 @@ async def get_event(ctx):
 @bot.command(name='remove', description='Remove event by ID')
 async def remove_event(ctx, id=-1):
     if id == -1:
-        ans = 'Whi'
-    dbHandler.remove_event_by_id(id)
+        ans = 'Which event I should remove, dumbass?'
+    else:
+        dbHandler.remove_event_by_id(id)
+        ans = f'Event {id} removed'
+    await ctx.send(ans)
 
 
 def run(token):
